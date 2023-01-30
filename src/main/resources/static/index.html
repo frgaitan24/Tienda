@@ -1,19 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>Tienda en Linea</title>
         <meta charset="UTF-8">
+        <meta name="description" content="Pagina de la leccion 2"/>
+        <meta name="keywords" content="html, css, web, fidelitas"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div>
-            <h1 style="color:green; text-align:center;">Home</h1>
-            <p>Bienvenidos a la página de la tienda en línea...</p>
-        </div>
+        <header id = "encabezado">
+            <h1>Tienda en linea</h1>
+            <br/>
+        </header>
 
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        <nav id="menu">
+            <a href="ejemplo9.html">Atrás</a>
+            <a href="index.html">Home</a>
+            <a href="ejemplo1.html">Adelante</a>
+        </nav>
 
+        <aside id="barraLateral">
+            <h2>Productos mas vendidos</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </aside>
+        <section id="contenido">
+            <h2>Articulos Principales</h2>
+            <article>
+                <header>Asus</header>
+                <p class="descripcion"><cite>It is a long established fact that a reader will be distracted</cite>the readable content of a page when looking at its layout.</p>
+                <figure>
+                    <img src="imagenes/Equipo1.png" alt="Asus" width="200"/>
+                    <figcaption>Imagen con fines ilustrativos</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <header>Alienware</header>
+                <p class="descripcion"><cite>It is a long established fact that a reader will be distracted</cite>the readable content of a page when looking at its layout.</p>
+                <figure>
+                    <img src="imagenes/Equipo2.png" alt="Alienware" width="200"/>
+                    <figcaption>Mas vendido</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <header>Impresora 3D</header>
+                <p class="descripcion"><cite>It is a long established fact that a reader will be distracted</cite>the readable content of a page when looking at its layout.</p>
+                <figure>
+                    <img src="imagenes/Equipo3.png" alt="Impresora 3D" width="200"/>
+                    <figcaption>Mas economico</figcaption>
+                </figure>
+            </article>
+            <br/>
+            <br/>
+            <article>
+                <h2>Linea de Productos</h2>
+                <table border="0">
+                    <thead id="encabezadoTabla">
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen">
+                        <tr>
+                            <td>1</td>
+                            <td>Teclado</td>
+                        </tr>   
+                        <tr>
+                            <td>3</td>
+                            <td>Control</td>
+                        </tr> 
+
+                        <tr>
+                            <td>7</td>
+                            <td>Monitor</td>
+                        </tr> 
+                        <tr>
+                            <td>10</td>
+                            <td>Disco duro</td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <footer id="piedePagina">
+            Derechos reservados &COPY; 2023 <address class="lineaDireccion">Tibas, Colima</address> <address class="lineaDireccion">Tel: 8888-9999</address>
+        </footer>
     </body>
 
 </html>
