@@ -11,7 +11,7 @@
         <a th:href="@{/}">Regresar</a>
         <br/>
         <br/>
-        <form th:action="@{/guardarCliente}"
+        <form th:action="@{/cliente/guardar}"
               method="POST" 
               th:object="${cliente}">
             <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
