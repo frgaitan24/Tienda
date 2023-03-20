@@ -4,13 +4,14 @@ import com.Tienda.domain.Cliente;
 import java.util.List;
 
 public interface ClienteService {
-
+    
     public List<Cliente> getClientes();
-
+    
     public Cliente getCliente(Cliente cliente);
     
-    public void save (Cliente cliente);//Insertar y Modificar un registro
+    public void save(Cliente cliente); //Tanto para insertar como modificar un registro
     
-    public void delete (Cliente cliente);
-
+    public void delete(Cliente cliente);
+    
+    public List<Cliente> getClienteApellidos(String apellidos);
 }
