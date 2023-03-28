@@ -2,6 +2,7 @@ package com.Tienda.controller;
 
 import com.Tienda.dao.ClienteDao;
 import com.Tienda.domain.Cliente;
+import com.Tienda.service.ArticuloService;
 import com.Tienda.service.ClienteService;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +23,8 @@ public class IndexController {
 
     @Autowired
     //ClienteDao clienteDao;
-    ClienteService ClienteService;
+    //ClienteService ClienteService;
+      ArticuloService articuloService;
 
     @GetMapping("/")
     public String inicio(Model model) {
@@ -40,8 +42,11 @@ public class IndexController {
 //      model.addAttribute("clientes", clientes);
         //var clientes = clienteDao.findAll();
         //var clientes = Arrays.asList();
-        var clientes = ClienteService.getClientes();
-        model.addAttribute("clientes", clientes);
+        //var clientes = ClienteService.getClientes();
+        //model.addAttribute("clientes", clientes);
+        //return "index";
+        var articulos = articuloService.getArticulos(true);
+        model.addAttribute("articulos", articulos);
         return "index";
     }
 }
