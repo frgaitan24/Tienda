@@ -25,9 +25,9 @@
                             <td th:text="${#numbers.formatDecimal(articulo.precio, 3, 2)}" style="text-align: right"></td>
                             <td th:text="${articulo.existencias}"style="text-align: center"></td>
                             <td><input type="checkbox" name="activa" th:checked="${articulo.activo}" disabled="true"></td>
-                            <td><a th:ref="@{/articulo/eliminar/} + ${articulo.idArticulo}"
+                            <td><a th:href="@{/articulo/eliminar/} + ${articulo.idArticulo}"
                                    th:text="#{accion.eliminar}">Eliminar</a></td>
-                            <td><a th:ref="@{/articulo/modificar/} + ${articulo.idArticulo}"
+                            <td><a th:href="@{/articulo/modificar/} + ${articulo.idArticulo}"
                                    th:text="#{accion.actualizar}">Modificar</a></td>
                         </tr>
                     </tbody>

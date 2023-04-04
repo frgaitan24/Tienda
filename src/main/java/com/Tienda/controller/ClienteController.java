@@ -14,39 +14,45 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class ClienteController {
-    
+
     @Autowired
     ClienteService clienteService;
-    
+
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
-        //var clientes = clientesDao.findAll();
-        var clientes= clienteService.getClienteApellidos("Mena Loría");
+        var clientes = clienteService.getClientes();
+
+        var limiteTotal = 0;
+        for (var c : clientes) {
+            limiteTotal += c.getCredito().getLimite();
+        }
+        model.addAttribute("limiteTotal", limiteTotal);
+        model.addAttribute("totalClientes", clientes.size());
+
         model.addAttribute("clientes", clientes);
-        
         return "/cliente/listado";
     }
-    
+
     @GetMapping("/cliente/nuevo")
-    public String nuevoCliente(Cliente cliente){
+    public String nuevoCliente(Cliente cliente) {
         return "/cliente/modificar";
     }
-    
+
     @PostMapping("/cliente/guardar")
-    public String guardarCliente(Cliente cliente){
+    public String guardarCliente(Cliente cliente) {
         clienteService.save(cliente);
         return "redirect:/cliente/listado";
     }
-    
+
     @GetMapping("/cliente/modificar/{idCliente}")
-    public String modificarCliente(Cliente cliente, Model model){
+    public String modificarCliente(Cliente cliente, Model model) {
         cliente = clienteService.getCliente(cliente);
         model.addAttribute("cliente", cliente);
         return "/cliente/modificar";
     }
-    
+
     @GetMapping("/cliente/eliminar/{idCliente}")
-    public String eliminarCliente(Cliente cliente){
+    public String eliminarCliente(Cliente cliente) {
         clienteService.delete(cliente);
         return "redirect:/cliente/listado";
     }

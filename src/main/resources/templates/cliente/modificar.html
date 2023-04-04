@@ -1,45 +1,13 @@
-<!DOCTYPE html>
-<html htmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
-            <h2 th:text="#{cliente.datos}">Datos de Clientes</h2>
-            <br/>
-            <a th:href="@{/cliente/listado}" th:text="#{accion.regresar}">Regresar</a>
-            <br/>
-            <br/>
-            <form th:action="@{/cliente/guardar}"
-                  method="POST" 
-                  th:object="${cliente}">
-                <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
-                <label for="nombre" th:text="#{cliente.nombre}">Nombre:</label>
-                <br/>
-                <input type="text" name="nombre" th:field="*{nombre}"/>
-                <br/>
-                <label for="apellidos" th:text="#{cliente.apellidos}">Apelidos:</label>
-                <br/>
-                <input type="text" name="apellidos" th:field="*{apellidos}"/>
-                <br/>
-                <label for="correo" th:text="#{cliente.correo}">Correo:</label>
-                <br/>
-                <input type="text" name="correo" th:field="*{correo}"/>
-                <br/>
-                <label for="telefono" th:text="#{cliente.telefono}">Telefono:</label>
-                <br/>
-                <input type="text" name="telefono" th:field="*{telefono}"/>
-                <br/>
-                <br/>
-                <label for="limite" th:text="#{cliente.limite}">Limite de credito:</label>
-                <br/>
-                <input type="number" name="limite" th:field="*{credito.limite}"/>
-                <br/>
-                <br/>
-                <button type="submit" th:text="#{accion.guardar}"/>
-            </form>
-        </div>
-        <footer th:replace="layout/plantilla :: footer"/>
+        <header th:replace="layout/plantilla :: header" />
+        <section th:replace="cliente/fragmentosCliente :: editarCliente"/> 
+        <footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>
