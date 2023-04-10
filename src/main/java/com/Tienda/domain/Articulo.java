@@ -1,6 +1,6 @@
 package com.Tienda.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import lombok.Data;
 
 /**
@@ -22,18 +22,22 @@ public class Articulo {
     private double precio;
     private int existencias;
     private boolean activo;
+    private String rutaImagen;
 
     public Articulo() {
     }
 
-    public Articulo(Long idCategoria, String descripcion, String detalle, double precio, int existencias, boolean activo) {
+    public Articulo(Long idCategoria, String descripcion, String detalle, double precio, int existencias, boolean activo, String rutaImagen) {
         this.idCategoria = idCategoria;
         this.descripcion = descripcion;
         this.detalle = detalle;
         this.precio = precio;
         this.existencias = existencias;
         this.activo = activo;
+        this.rutaImagen = rutaImagen;
     }
+
+
     
     
 }
