@@ -16,9 +16,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    
     @Autowired
     private UserDetailsService userDetailsService;
+
     @Autowired
     public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception {
         build.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
@@ -71,6 +71,11 @@ public class SecurityConfig {
                         "/categoria/listado",
                         "/cliente/listado")
                 .hasAnyRole("ADMIN", "VENDEDOR")
+                .requestMatchers(
+                        "/carrito/agregar/**",
+                        "/carrito/eliminar/**",
+                        "/carrito/listado")
+                .hasRole("USER")
                 )
                 .formLogin((form) -> form
                 .loginPage("/login")

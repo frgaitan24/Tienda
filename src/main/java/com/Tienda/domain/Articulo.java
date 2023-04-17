@@ -7,14 +7,15 @@ import lombok.Data;
  *
  * @author Usuario
  */
-
 @Data
 @Entity
-@Table(name="articulo")
+@Table(name = "articulo")
 public class Articulo {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idArticulo")
     private Long idArticulo;//Transforma en id_articulo
     private Long idCategoria;
     private String descripcion;
@@ -36,8 +37,4 @@ public class Articulo {
         this.activo = activo;
         this.rutaImagen = rutaImagen;
     }
-
-
-    
-    
 }
